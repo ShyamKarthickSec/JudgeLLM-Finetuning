@@ -1,0 +1,19 @@
+(venv) shyamkarthicksec@MSI:/mnt/d/Projects/JudgeLLM-Finetuning$ python evaluate_base_vs_adapter.py
+[info] loaded 100 test samples
+[info] loading base model ...
+Loading weights: 100%|██████████████████████████████████| 254/254 [00:09<00:00, 26.34it/s, Materializing param=model.norm.weight]
+[info] running base model on test set ...
+[info] loading adapter on base model ...
+[info] running adapter model on test set ...
+
+=== COMPARISON SUMMARY ===
+| metric | base_model | adapter_model | delta(adapter-base) |
+|---|---:|---:|---:|
+| samples | 100 | 100 | 0 |
+| json_valid_rate | 0.9400 | 1.0000 | +0.0600 |
+| verdict_accuracy | 0.6100 | 0.9000 | +0.2900 |
+| rules_exact_match | 0.3400 | 0.7800 | +0.4400 |
+| deny_recall | 0.7750 | 0.9500 | +0.1750 |
+| unsafe_false_negative_rate_deny | 0.2250 | 0.0500 | -0.1750 |
+
+[done] artifacts written to: outputs/llama32_3b_judge_qlora/eval

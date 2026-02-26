@@ -1,0 +1,8 @@
+{
+  "samples": 100,
+  "json_valid_rate": 0.94,
+  "verdict_accuracy": 0.61,
+  "rules_exact_match": 0.34,
+  "unsafe_false_negative_rate_deny": 0.225,
+  "deny_recall": 0.775
+}
