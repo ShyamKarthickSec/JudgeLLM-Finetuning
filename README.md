@@ -179,41 +179,11 @@ Interpretation:
 - Large reduction in unsafe misses (`DENY` false negatives).
 - Format control improved (higher JSON validity).
 
----
 
-## 8) Practical Gotchas We Hit
-
-1. **Missing Python headers in WSL** caused Triton/bitsandbytes compile error:
-   - symptom: `fatal error: Python.h: No such file or directory`
-2. **TRL API mismatch**:
-   - `max_length`/`packing` must be set in `SFTConfig` (not as direct `SFTTrainer` kwargs in this setup).
-3. **Mixed precision mismatch**:
-   - BF16 gradients with FP16 AMP scaler can crash.
-   - fixed by aligning model dtype and trainer `bf16/fp16` flags.
-4. **Transformers deprecation**:
-   - use `dtype=` instead of `torch_dtype=`.
 
 ---
 
-## 9) Current Limitations
-
-- Evaluation is on a relatively small test set (`n=100`).
-- Current JSON-valid metric can still be optimistic if parser recovers inner JSON from noisy text.
-- In-distribution performance may not fully reflect adversarial or out-of-distribution safety behavior.
-
----
-
-## 10) Recommended Next Steps
-
-1. Add strict schema validation metric (`schema_valid_rate`).
-2. Evaluate on adversarial prompt-injection/jailbreak prompts.
-3. Run OOD hazard scenarios and class-wise breakdown.
-4. Check confidence calibration (`confidence` vs actual correctness).
-5. Expand test size for tighter confidence in metrics.
-
----
-
-## 11) Quick Repro Commands
+## 9) Quick Repro Commands
 
 Train:
 
