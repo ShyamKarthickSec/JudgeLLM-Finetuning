@@ -1,0 +1,10 @@
+{
+  "samples": 165,
+  "parser_json_valid_rate": 0.9636363636363636,
+  "strict_json_valid_rate": 0.7818181818181819,
+  "schema_valid_rate": 0.7818181818181819,
+  "verdict_accuracy": 0.6484848484848484,
+  "rules_exact_match": 0.36363636363636365,
+  "deny_recall": 0.7126436781609196,
+  "unsafe_false_negative_rate_deny": 0.28735632183908044
+}
